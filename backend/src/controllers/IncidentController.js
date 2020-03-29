@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-module.exports = {};
-=======
 const connection = require('../database/connection');
 
 module.exports = {
@@ -8,8 +5,6 @@ module.exports = {
         const { page = 1 } = request.query;
 
         const [count] = await connection('incidents').count();
-            
-        
 
         const incidents = await connection('incidents')
             .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
@@ -61,4 +56,3 @@ module.exports = {
         return response.status(204).send();
     }
 };
->>>>>>> Conclusão da aula do segundo dia
